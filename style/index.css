@@ -3,6 +3,8 @@ html, body{
     margin: 0%;
     box-sizing: border-box;
     overflow-x: hidden;
+    	background-color:#dfdbdbde;
+
 }
 
 :root{
@@ -85,6 +87,7 @@ p{
 
 /* ------x------- Global Classes -------x-------*/
 
+
 /* --------------- navbar ----------------- */
 
 .nav{
@@ -161,7 +164,6 @@ p{
 .nav .social i{
     padding: 0 .2rem;
 }
-
 .nav .social i:hover{
     color: #a1c4cf;
 }
@@ -173,7 +175,7 @@ p{
 
 /* --------------- Site title ---------------- */
 main .site-title{
-    background: url('../assets/new_home_cover.jpeg');
+    background: url('/assets/pages/new_home_cover.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 110vh;
@@ -189,7 +191,7 @@ main .site-title .site-background{
 }
 
 main .section-title{
-    background: url('../assets/section-title-background.jpg');
+    background: url('/assets/pages/section-title-background.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     height: 80vh;
@@ -204,6 +206,26 @@ main .section-title .section-background{
     color: var(--white);
 }
 
+/*-----Contact Page-----*/
+main .contact-site-title{
+    background: url('/assets/pages/contact-me.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    
+}
+
+main .contact-site-title .site-background{
+    padding-top: 20rem;
+    text-align: center;
+    color: var(--white);
+}
+
+
+
+/*-----Contact Page-----*/
 
 
 main .site-title h1, h2, h3{
@@ -258,6 +280,7 @@ main .blog-content .btn-blog{
 
 main .blog-content span{
     display: block;
+
 }
 
 section .container .owl-nav{
@@ -291,12 +314,11 @@ section .container .owl-nav{
 
 main .site-content{
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 35% 35% 30%;
 }
 
 main .post-content{
     width: 100%;
-    
 }
 
 main .site-content .post-content > .post-image, .post-title{
@@ -309,20 +331,20 @@ main .site-content .post-content > .post-image .post-info{
     padding: 1rem;
     position: absolute;
     bottom: 0%;
-    left: 20vw;
+    left: 7vw;
     border-radius: 3rem;
-}
+;}
 
 main .site-content .post-content > .post-image > div{
     overflow: hidden;
 }
 
-main .site-content .post-content > .post-image .img{
+main .site-content .post-content > .post-image .img-blog-cover{
     width: 100%;
     /* transition: all 1s ease; */
 }
 
-main .site-content .post-content > .post-image .img:hover{
+main .site-content .post-content > .post-image .img-blog-cover:hover{
     /* transform: scale(1.3); */
 }
 
@@ -373,78 +395,236 @@ main .post-content .post-title a{
 }
 
 /* -------x-------- Site Content --------x-------*/
+/*------------------------------------------------------------------
+[7. Widget / .widget]
+*/
 
-
-/* --------------- Sidebar ----------------------- */
-
-.site-content > .sidebar .category-list{
-    font-family: var(--Livvic);   
+.widget {
+	margin-bottom:50px;
+    background-color: white;
+	border-radius:10px 10px 10px 10px;
+    
 }
-
-.site-content > .sidebar .category-list .list-items{
-    background:#E2725B;;
-    padding: .4rem 1rem;
-    margin: .8rem 0;
-    border-radius: 3rem;
-    width: 70%;
-    display: flex;
-    justify-content: space-between;
+.widget h3 {
+	margin:0;
+	font-size:18px;
+	letter-spacing:2px;
 }
-
-.site-content > .sidebar .category-list .list-items a{
-    color:  black;
-}
-
-.site-content > .sidebar .category-list .list-items:hover{
-    background: transparent;
-    border: 1px solid;
-    color: var(--black);
-    border-color: #0f0f0f;
+.widget-title {
+	text-align:center;
+	padding:16px;
+	border-radius:10px 10px 0 0;
+	text-transform:uppercase;
 }
 
 
+/*------------------------------------------------------------------
+[7.1. About Me / .about-me]
+*/
+main .container .sidebar{
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 8;
 
-.site-content .sidebar .popular-post .post-content{
-    padding: 1rem 0;
 }
 
-.site-content .sidebar .newsletter{
-    padding-top: 10rem;
+main .container .sidebar .about-me .ab-image {
+	position:relative;
+}
+main .container .sidebar .about-me .ab-image img {
+	border-radius:10px 10px 0 0;
+    max-height: 100%;
+    max-width: 100%;
+    
+    
+
 }
 
-.site-content .sidebar .newsletter .form-element{
-    padding: .5rem 2rem;
+main .container .sidebar .about-me .ad-text {
+	padding:25px;
+	border-radius:0 0 10px 10px;
+	text-align:center;
 }
-
-.site-content .sidebar .newsletter .input-element{
-    width: 80%;
-    height: 1.9rem;
-    padding: .3rem .5rem;
-    font-family: var(--Lexend);
-    font-size: 1rem;
-}
-
-.site-content .sidebar .newsletter .form-btn{
-    border-radius: 0;
-    padding: .8rem 32%;
-    margin: 1rem 0;
-    background: #E2725B;    ;
-}
-.site-content .sidebar .newsletter .form-btn:hover{
-    background: transparent;
-    border: 1px solid;
-    color: var(--black);
-    border-color: #0f0f0f;
+.about-me .ad-text p {
+    font-size: 14px;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    line-height: 1.8;
+    padding-bottom: 10px;
 }
 
 
 
+/*------------------------------------------------------------------
+[7.2. Latest Posts / .latest-posts]
+*/
+.clear,
+.clearfix {
+	clear:both;
+}
+ .container .sidebar .latest-posts .posts-container {
+	text-transform:uppercase;
+	padding:25px;
+	margin-top:4px;
+	border-radius:0 0 10px 10px;
+}
+main .container .sidebar .latest-posts .posts-container .item {
+	margin-top:25px;
+}
+.container .sidebar .latest-posts .posts-container .item:first-child {
+	margin-top:0;
+}
+.container .sidebar .latest-posts .post-image {
+	margin-right:25px;
+	float:left;	
+}
+.container .sidebar .latest-posts .info-post {
+	float:left;
+	width:166px;	
+}
+main .container .sidebar .info-post h5 {
+	margin:0 0 10px 0;
+}
+main .container .sidebar .latest-posts .info-post h5 a {
+	font-size:14px;
+	font-family: 'Playfair Display', serif;
+	letter-spacing:1.5px;
+	line-height:1.5;
+}
+main .container .sidebar .latest-posts .info-post .date {
+	font-size:12px;
+	letter-spacing:1.5px;
+}
 
+
+/*------------------------------------------------------------------
+[7.3. Follow Us / .follow-container]
+*/
+
+.container .follow-container {
+	text-transform:uppercase;
+	padding:25px;
+	margin-top:4px;
+	border-radius:0 0 10px 10px;
+	text-align:center;	
+}
+.container .follow-container a {
+    /* border-radius: 50%; */
+    display: inline-block;
+    font-size: 12px;
+    height: 42px;
+    line-height: 44px;
+    margin: 6px;
+    width: 42px;
+	transition: all 0.3s ease 0s;
+    background-color: white;
+}
+.container .follow-container a:hover {
+	transition: all 0.3s ease 0s;
+}
+
+.container .follow-container i{
+    background-color: white;
+   font-size: xx-large;
+   border-color: rgb(226, 94, 12);
+   border-radius: 10px 10px 10px 10px;
+   border-style: solid;
+   padding: 5px;
+
+
+}
+
+
+/*------------------------------------------------------------------
+[7.4. Tags / .tags-container]
+*/
+
+.container .tags-container {
+	text-transform:uppercase;
+	padding:25px;
+	margin-top:4px;
+	border-radius:0 0 10px 10px;
+	text-align:center;
+}
+.container .tags-container a {
+	padding:8px 20px;
+	margin:5px;
+	font-size:12px;
+	display:inline-block;
+	border-radius:5px;
+    border-style: solid;
+    border-color: rgb(226, 94, 12);
+
+	transition: all 0.6s ease 0s;
+
+}
+.container .tags-container a:hover {
+	transition: all 0.6s ease 0s;
+}
+
+
+
+
+
+/*------------------------------------------------------------------
+[7.6. Newsletter / .newsletter-container]
+*/
+
+.container .newsletter-container {
+	padding:25px;
+	margin-top:4px;
+	border-radius:0 0 10px 10px;
+	text-align:center;	
+}
+.container .newsletter h4 {
+	font-size:14px;
+	letter-spacing:2px;
+}
+.container .newsletter p {
+	font-size:12px;
+	letter-spacing:1.5px;
+}
+.container .newsletter form {
+	margin-top:25px;
+}
+.container .newsletter form input {
+	display:block;
+	width:100%;
+	border:0;
+	border-radius:5px;
+	font-style:italic;
+	font-size:12px;
+	padding:12px;
+	margin-bottom:10px;
+	text-align:center;
+	letter-spacing:1.5px;
+    padding-right: 12px;
+    border-color: rgb(226, 94, 12);
+    border-style: solid;
+
+}
+.container .newsletter form button {
+    display:block;
+    width:100%;
+	border:0;
+    border-radius:5px;
+	padding:12px;
+
+    border-color: rgb(226, 94, 12);
+    border-style: solid;
+	
+	text-transform:uppercase;
+	letter-spacing:1.5px;
+	font-weight:600;	
+}
+/* 
+--------------- Sidebar -----------------------
 
 
 /* -------x------- Sidebar -----------x----------- */
 
-   .aboute-me-container {
+   .about-me-container {
     align-items: center;
     justify-content: center;
   }
@@ -460,7 +640,7 @@ main .post-content .post-title a{
     padding-left: 20px;
     padding-top: 20%;
     float: left;
-  }
+  } */
 
 
   /* POST SLIDER */
@@ -542,8 +722,70 @@ main .post-content .post-title a{
     
 }
 
+.single-post-header{
+text-align: center;
+}
+
 /* ---------x------- Main Content -----x----- */
 
+/*-----------------Contact me Page---------------*/
+main .column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  main .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  main .container input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  main .container input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  main .container input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add a background color and some padding around the form */
+  main .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+main .contact-site-title .contact-site-background h1{
+    color: white;
+    padding-top: 80px
+}
+
+main .container h3{
+    color:black;
+    padding:5%;
+    text-align: center;
+}
+
+/*---------x--------Contact me Page----x-----------*/
 
 /* ----------------- Footer --------------------- */
 
@@ -556,6 +798,8 @@ footer.footer{
 footer.footer .container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    background: var(--bg-color);
+
 }
 
 footer.footer .container > div{
