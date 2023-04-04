@@ -462,6 +462,26 @@ main .container .sidebar .about-me .ad-text {
 .about-col h1{
   text-align: center;
 }
+/* make the about-me-left and about-me-right be left and right of each other*/
+.about-me{
+    display: flex;
+    flex-direction: row;
+}
+.about-me-left{
+    padding: 1rem 2rem;
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    margin: 1rem;
+}
+.about-me-right{
+    padding: 1rem 2rem;
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    margin: 1rem;
+}
+
 
 
 
