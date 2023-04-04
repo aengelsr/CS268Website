@@ -42,6 +42,7 @@ $(document).ready(function () {
         }, 1000);
     })
 
+
     $(".post-wrapper").slick({
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -78,6 +79,14 @@ $(document).ready(function () {
             // instead of a settings object
         ]
     });
+
+    //use the btn class to scroll half the page
+    $('.btn').click(function () {
+        $('html, body').animate({
+            scrollTop: $(".post-wrapper").offset().top
+        }, 1000);
+    });
+
 });
 
 
