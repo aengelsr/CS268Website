@@ -7,7 +7,7 @@
     <title>Contact</title> 
 
     <!--custom style-->
-    <link rel="stylesheet" href="/style/index.css">
+    <link rel="stylesheet" href="style/index.css">
 
     <!--Style for icons-->
     <script src="https://kit.fontawesome.com/48e57d5629.js" crossorigin="anonymous"></script>    
@@ -38,11 +38,15 @@
                         <a href="aboutMe.html">About Me</a>
                     </li>
                     <li class="nav-link">
-                        <a href="contact.html">Contact Us</a>
+                        <a href="contact.php">Contact Us</a>
                     </li>
                     <li class="nav-link">
-                        <a href="gallery.html">Gallery</a>
+                        <a href="gallery.php">Gallery</a>
                     </li>
+                    <li class="nav-link">
+                        <a href="books-display.php">Books</a>
+                    </li>
+                    
                 </ul>
             </div>
             <div class="social text-gray">
@@ -77,24 +81,30 @@
             Questions, Comments, Concerns? <br>
         </h3>
 
-        <form action="action_page.php">
-
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your first name..">
-        
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        
+        <div class="form">
+          <form method="POST" action="contact-database.php">
+            <p>
+            <label for="fname">First Name </label>
+            <input type="text" name="fname" id="fname">
+            </p>
+            <p>
+            <label for="lname">Last Name </label>
+            <input type="text" name="lname" id="lname">
+            </p>
+            <p>
             <label for="email">Email</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your email..">
-
-        
-            <label for="subject">Subject</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-        
-            <input type="submit" value="Submit">
-        
+            <input type="text" name="email" id="email">
+            </p>
+            <p>
+              <label for="message">inquire</label>
+              <input type="text" name="inquire" id="inquire">
+            </p>
+            <p>
+            <input type="submit" name="submit" id="submit" value="Submit">
+            </p>
           </form>
+
+
     </section>
     <hr>
     <section class="section-title">

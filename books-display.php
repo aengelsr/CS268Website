@@ -42,7 +42,7 @@
                         <a href="gallery.php">Gallery</a>
                     </li>
                     <li class="nav-link">
-                        <a href="books.php">Books</a>
+                        <a href="books-display.php">Books</a>
                     </li>
                     
                 </ul>
@@ -50,25 +50,46 @@
             <div class="social text-gray">
                 <a href="https://www.facebook.com/abby.murphy.98"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/abby_msnr/"><i class="fab fa-instagram"></i></a>
-                <a href="create-user.php"><i class="fa-solid fa-user"></i>
-                </a>
-
             </div>
         </div>
     </nav>
 
     <!-- ------------x--------------- Body --------------------------x------------------- -->
-    <section class="about-me-page">
-       <!--Make the about me page in the about-me class be a flexbox with 2 vertical sections for the whole width of the screen-->
-        <div class="about-me-left-page">
-            <h1 class="about-me-title">About Me</h1>
-            <p class="about-me-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit corporis debitis a officiis esse possimus qui? Earum, temporibus numquam necessitatibus, placeat eum repudiandae maxime eaque, harum quas cupiditate libero sed.</p>
-            <p class="about-me-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quibusdam quam in nostrum cupiditate rerum delectus! Non necessitatibus earum nostrum, ea suscipit vitae eos veniam cupiditate, atque harum, quibusdam quis!</p>
-        </div>
-        <div class="about-me-right-page">
-            <img src="assets/pages/about-me.jpg" alt="about-me" class="about-me-image">
-        </div>
-    </section>
+    <div class="books-grid-container" style="display: grid; grid-template-columns: 35% 35% 30%;">
+<?php require_once 'connect.php';?>
+    <?php
+                    // Query the database to retrieve user data
+    $query = "SELECT image_url, author, title, summary FROM books";
+    $result = mysqli_query($con, $query);
+    ?>
+    <?php
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $image_url = $row["image_url"];
+            $title = $row["title"];
+            $author = $row["author"];
+            $author = $row["summary"];
+            $author = $row["link"];
+
+
+            echo "<div class='books-grid-item' style='padding:25%; text-align:center'>";
+            echo "<img src='$image_url' alt='$title'>";
+            echo '<h1>' . $row["title"] . '</h3>';
+            echo '<p style="font-size:26px;";>' . $row["author"] . '</p>';
+            echo '<p style="font-size:26px;";>' . $row["summary"] . '</p>';
+            echo '<a href="' . $row["link"] . '" style="font-size:26px; text-decoration: underline;">Interested? Buy here!</a>';
+            echo '</div>';
+        }
+    } else {
+        echo "No results found.";
+    }
+    ?>
+</div>
+
+<?php
+// Close database connection
+$con->close();
+?>
 
     <!-- --------------------------- Footer ---------------------------------------- -->
 
