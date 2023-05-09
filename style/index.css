@@ -189,8 +189,8 @@ main .site-title .site-background{
     color: var(--white);
 }
 
-main .section-title{
-    background: url('/assets/pages/section-title-background.jpg');
+main .site-title {
+    background: url('../assets/pages/new_home_cover.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 80vh;
@@ -200,6 +200,7 @@ main .section-title{
 }
 
 main .section-title .section-background{
+    background: url('../assets/pages/section-title-background.jpg');
     padding-top: 10rem;
     text-align: center;
     color: var(--white);
@@ -207,7 +208,7 @@ main .section-title .section-background{
 
 /*-----Contact Page-----*/
 main .contact-site-title{
-    background: url('assets/pages/contact-me.jpeg');
+    background: url('../assets/pages/contact-me.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 80vh;
