@@ -83,7 +83,7 @@ $(document).ready(function () {
     //use the btn class to scroll half the page
     $('.btn').click(function () {
         $('html, body').animate({
-            scrollTop: $(".post-wrapper").offset().top
+            scrollTop: $(document).height() / 2
         }, 1000);
     });
 

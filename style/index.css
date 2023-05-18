@@ -660,7 +660,41 @@ main .container .sidebar .latest-posts .info-post .date {
 }
 
 
-
+/* -------------------------------------------------- books display ------------------------------------------------------*/
+.books-grid-container {
+    display: grid;
+    grid-template-columns: 35% 35% 30%;
+    grid-row-gap: 0px; 
+    
+  }
+  
+  .books-grid-item {
+    text-align: center;
+  }
+  .book-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  
+  
+  .summary-scroll {
+    max-height: 16em;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .summary-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .summary-scroll p {
+    margin: 0;
+  }
+  
+  
 
 
 /*------------------------------------------------------------------
@@ -967,6 +1001,8 @@ footer.footer .move-up span:hover{
 }
 
 /* ---------x------- Footer ----------x---------- */
+
+
 
 /* ********* Gallery ********* */
 img{

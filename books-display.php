@@ -56,29 +56,36 @@
 
     <!-- ------------x--------------- Body --------------------------x------------------- -->
     <div class="books-grid-container" style="display: grid; grid-template-columns: 35% 35% 30%;">
-<?php require_once 'connect.php';?>
+    <?php require_once 'connect.php'; ?>
     <?php
-                    // Query the database to retrieve user data
+    // Query the database to retrieve user data
     $query = "SELECT image_url, author, title, summary FROM books";
     $result = mysqli_query($con, $query);
-    ?>
-    <?php
+
     if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
+        while ($row = $result->fetch_assoc()) {
             $image_url = $row["image_url"];
             $title = $row["title"];
             $author = $row["author"];
-            $author = $row["summary"];
-            $author = $row["link"];
-
-
-            echo "<div class='books-grid-item' style='padding:25%; text-align:center'>";
-            echo "<img src='$image_url' alt='$title'>";
-            echo '<h1>' . $row["title"] . '</h3>';
-            echo '<p style="font-size:26px;";>' . $row["author"] . '</p>';
-            echo '<p style="font-size:26px;";>' . $row["summary"] . '</p>';
-            echo '<a href="' . $row["link"] . '" style="font-size:26px; text-decoration: underline;">Interested? Buy here!</a>';
-            echo '</div>';
+            $summary = $row["summary"];
+    
+            // Check if the title is "the vanishing half"
+            $url_title = "The Vanishing Half";
+            $padding = ($title === $url_title) ? "15%" : "20%";
+            $padding_top = ($title === $url_title) ? "25%" : "";
+    
+            ?>
+    
+            <div class='books-grid-item' style='padding: <?php echo $padding; ?>; padding-top: <?php echo $padding_top; ?>; text-align: center'>
+                <img src='<?php echo $image_url; ?>' alt='<?php echo $title; ?>' class='book-image'>
+                <h1><?php echo $title; ?></h1>
+                <p style="font-size: 26px;"><?php echo $author; ?></p>
+                <div class="summary-scroll">
+                    <p style="font-size: 20px;"><?php echo $summary; ?></p>
+                </div>
+            </div>
+    
+            <?php
         }
     } else {
         echo "No results found.";
@@ -90,6 +97,7 @@
 // Close database connection
 $con->close();
 ?>
+
 
     <!-- --------------------------- Footer ---------------------------------------- -->
 

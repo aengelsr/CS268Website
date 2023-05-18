@@ -140,7 +140,8 @@
                         echo '<td>' . $row['id'] . '</td>';
                         echo '<td>' . $row['user'] . '</td>';
                         echo '<td>' . $row['email'] . '</td>';
-                        echo '<td>' . $row['pass'] . '</td>';
+                        // echo '<td>' . $row['pass'] . '</td>';
+                        echo '<td>' . '********' . '</td>';
                         echo '</tr>';
                     }
                     

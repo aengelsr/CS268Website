@@ -7,7 +7,7 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/48e57d5629.js" crossorigin="anonymous"></script>    
 
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/gallery.css">
 </head>
 <body>
     <nav class="nav">
@@ -35,7 +35,7 @@
                         <a href="contact.php">Contact Us</a>
                     </li>
                     <li class="nav-link">
-                        <a href="gallery.html">Gallery</a>
+                        <a href="gallery.php">Gallery</a>
                     </li>
                     <li class="nav-link">
                         <a href="books.php">Books</a>
@@ -51,9 +51,7 @@
     </nav>
     <main>
     <?php require_once 'connect.php';?>
-<div class="grid-container" style="display: grid; grid-template-columns: 35% 35% 30%; padding:2px; row-gap: 10px; column-gap: 10px;
-;
-">
+<div class="gallery-grid-container">
 
 <?php
 // Select all data from the gallery table
@@ -74,9 +72,6 @@ if ($result->num_rows > 0) {
         echo "<img src='$image_url' alt='$title'>";
         echo "</div>";
     }
-    
-    // End the grid container
-    echo "</div>";
 } else {
     // Display a message if there are no rows returned from the query
     echo "No data found.";
@@ -85,7 +80,54 @@ if ($result->num_rows > 0) {
 // Close the database connection
 $con->close();
 ?>
-    </main>
+</div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="about-us">
+            <h2>About us</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quia atque nemo ad modi officiis
+                iure, autem nulla tenetur repellendus.</p>
+        </div>
+        <div class="newsletter">
+            <h2>Subscribe</h2>
+            <p>Never miss a post!</p>
+            <div class="form-element">
+                <input type="text" placeholder="Email"><span><i class="fas fa-chevron-right"></i></span>
+            </div>
+        </div>
+        <div class="instagram">
+            <h2>Instagram</h2>
+            <div class="flex-row">
+                <img src="./assets/insta/insta1.jpeg" alt="insta1">
+                <img src="./assets/insta/insta2.jpeg" alt="insta2">
+                <img src="./assets/insta/insta3.jpeg" alt="insta3">
+            </div>
+            <div class="flex-row">
+                <img src="./assets/insta/insta4.jpeg" alt="insta4">
+                <img src="./assets/insta/insta5.jpeg" alt="insta5">
+                <img src="./assets/insta/insta6.jpeg" alt="insta6">
+            </div>
+        </div>
+        <div class="follow">
+            <h2>Stop by!</h2>
+            <div>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+    </div>
+    <div class="rights flex-row">
+        <h4 class="text-gray">
+            Copyright ©223 All rights reserved | made by the cool kids 
+        </h4>
+    </div>
+    <div class="move-up">
+        <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+    </div>
+</footer>
    
 
    <!-- JQuery -->
@@ -95,6 +137,17 @@ $con->close();
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
   <!-- Custom Script -->
+  <script>
+        // JavaScript code for image click event
+        const galleryItems = document.querySelectorAll('.grid-item');
+
+        // Add click event listener to each gallery item
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('expanded');
+            });
+        });
+    </script>
 <script src="/functionality.js"></script>
 </body>
 </html>
